@@ -1,3 +1,21 @@
+:root {
+  --dark-gray: #858293;
+  --light-gray: #dfdfdf;
+  --orange: #ff8e2e;
+}
+
+.bg-dark-gray {
+  background-color: var(--dark-gray);
+}
+
+.bg-light-gray {
+  background-color: var(--light-gray);
+}
+
+.bg-orange {
+  background-color: var(--orange);
+}
+
 .App {
   text-align: center;
 }
@@ -14,7 +32,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: transparent;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
