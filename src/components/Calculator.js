@@ -1,42 +1,39 @@
 import React from 'react';
-// import reactDom from 'react-dom';
+import CalcRow from './CalcRow';
 
-// eslint-disable-next-line react/prefer-stateless-function
+const CalcInfo = {
+  first: ['AC', '+/-', '%', '÷'],
+  second: ['7', '8', '9', 'x'],
+  third: ['4', '5', '6', '-'],
+  fourth: ['1', '2', '3', '+'],
+  fifth: ['0', '.', '='],
+  style: {
+    orange: 'bg-orange',
+    lightGray: 'bg-light-gray',
+    darkGray: 'bg-dark-gray',
+  },
+};
+
 class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-12 bg-dark-gray">0</div>
+          <div className={`result col-12 p-3 text-end text-white border-mid-gray ${CalcInfo.style.darkGray}`}>0</div>
         </div>
+        <CalcRow content={CalcInfo.first} style={CalcInfo.style} />
+        <CalcRow content={CalcInfo.second} style={CalcInfo.style} />
+        <CalcRow content={CalcInfo.third} style={CalcInfo.style} />
+        <CalcRow content={CalcInfo.fourth} style={CalcInfo.style} />
         <div className="row">
-          <div className="col-3 bg-light-gray">AC</div>
-          <div className="col-3 bg-light-gray">+/-</div>
-          <div className="col-3 bg-light-gray">%</div>
-          <div className="col-3 bg-orange">÷</div>
-        </div>
-        <div className="row">
-          <div className="col-3 bg-light-gray">7</div>
-          <div className="col-3 bg-light-gray">8</div>
-          <div className="col-3 bg-light-gray">9</div>
-          <div className="col-3 bg-orange">x</div>
-        </div>
-        <div className="row">
-          <div className="col-3 bg-light-gray">4</div>
-          <div className="col-3 bg-light-gray">5</div>
-          <div className="col-3 bg-light-gray">6</div>
-          <div className="col-3 bg-orange">-</div>
-        </div>
-        <div className="row">
-          <div className="col-3 bg-light-gray">1</div>
-          <div className="col-3 bg-light-gray">2</div>
-          <div className="col-3 bg-light-gray">3</div>
-          <div className="col-3 bg-orange">+</div>
-        </div>
-        <div className="row">
-          <div className="col-6 bg-light-gray">0</div>
-          <div className="col-3 bg-light-gray">.</div>
-          <div className="col-3 bg-orange">=</div>
+          <button type="button" className={`col-6 p-3 text-center border-mid-gray ${CalcInfo.style.lightGray}`}>0</button>
+          <button type="button" className={`col-3 p-3 text-center border-mid-gray ${CalcInfo.style.lightGray}`}>.</button>
+          <button type="button" className={`col-3 p-3 text-center border-mid-gray ${CalcInfo.style.orange}`}>=</button>
         </div>
       </div>
     );

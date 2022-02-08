@@ -1,28 +1,29 @@
-import React from "react";
-import CalcCol from "./CalcCol";
+import React from 'react';
+import PropTypes from 'prop-types';
+import CalcCol from './CalcCol';
 
-// eslint-disable-next-line react/prefer-stateless-function
 class CalcRow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
 
   render() {
+    const { content, style: { lightGray, orange } } = this.props;
     return (
       <div className="row">
-        <CalcCol text={this.props} class="bg-light-gray" />
-        <CalcCol text="+/-" class="bg-light-gray" />
-        <CalcCol text="%" class="bg-light-gray" />
-        <CalcCol text="÷" class="bg-orange" />
+        <CalcCol text={content[0]} backGrnd={lightGray} />
+        <CalcCol text={content[1]} backGrnd={lightGray} />
+        <CalcCol text={content[2]} backGrnd={lightGray} />
+        <CalcCol text={content[3]} backGrnd={orange} />
       </div>
     );
   }
 }
 
+CalcRow.propTypes = {
+  content: PropTypes.instanceOf(Array).isRequired,
+  style: PropTypes.instanceOf(Object).isRequired,
+};
 
-{ /* <div className="row">
-<div className="col-3 bg-light-gray">AC</div>
-<div className="col-3 bg-light-gray">+/-</div>
-<div className="col-3 bg-light-gray">%</div>
-<div className="col-3 bg-orange">÷</div>
-</div> */ }
+export default CalcRow;
