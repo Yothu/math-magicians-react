@@ -1,39 +1,61 @@
 import React from 'react';
-import CalcRow from './CalcRow';
+import calculate from './logic/calculate';
 
-const CalcInfo = {
-  first: ['AC', '+/-', '%', '÷'],
-  second: ['7', '8', '9', 'x'],
-  third: ['4', '5', '6', '-'],
-  fourth: ['1', '2', '3', '+'],
-  fifth: ['0', '.', '='],
-  style: {
-    orange: 'bg-orange',
-    lightGray: 'bg-light-gray',
-    darkGray: 'bg-dark-gray',
-  },
+const Style = {
+  button: 'p-3 text-center border-mid-gray',
+  orange: 'bg-orange',
+  lightGray: 'bg-light-gray',
+  darkGray: 'bg-dark-gray',
 };
-
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      total: null,
+    };
   }
 
   render() {
+    const obj = this.state;
+    const { total } = this.state;
+
+    const {
+      button, orange, lightGray, darkGray,
+    } = Style;
+
     return (
       <div className="container">
         <div className="row">
-          <div className={`result col-12 p-3 text-end text-white border-mid-gray ${CalcInfo.style.darkGray}`}>0</div>
+          <div className={`result col-12 ${button} ${darkGray}`}>{total}</div>
         </div>
-        <CalcRow content={CalcInfo.first} style={CalcInfo.style} />
-        <CalcRow content={CalcInfo.second} style={CalcInfo.style} />
-        <CalcRow content={CalcInfo.third} style={CalcInfo.style} />
-        <CalcRow content={CalcInfo.fourth} style={CalcInfo.style} />
         <div className="row">
-          <button type="button" className={`col-6 p-3 text-center border-mid-gray ${CalcInfo.style.lightGray}`}>0</button>
-          <button type="button" className={`col-3 p-3 text-center border-mid-gray ${CalcInfo.style.lightGray}`}>.</button>
-          <button type="button" className={`col-3 p-3 text-center border-mid-gray ${CalcInfo.style.orange}`}>=</button>
+          <button type="button" onClick={calculate()} className={`col-3 ${button} ${lightGray}`}>AC</button>
+          <button type="button" onClick={calculate()} className={`col-3 ${button} ${lightGray}`}>+/-</button>
+          <button type="button" onClick={calculate()} className={`col-3 ${button} ${lightGray}`}>%</button>
+          <button type="button" onClick={calculate()} className={`col-3 ${button} ${orange}`}>÷</button>
+        </div>
+        <div className="row">
+          <button type="button" onClick={calculate()} className={`col-3 ${button} ${lightGray}`}>7</button>
+          <button type="button" onClick={calculate()} className={`col-3 ${button} ${lightGray}`}>8</button>
+          <button type="button" onClick={calculate()} className={`col-3 ${button} ${lightGray}`}>9</button>
+          <button type="button" onClick={calculate()} className={`col-3 ${button} ${orange}`}>x</button>
+        </div>
+        <div className="row">
+          <button type="button" onClick={calculate()} className={`col-3 ${button} ${lightGray}`}>4</button>
+          <button type="button" onClick={calculate()} className={`col-3 ${button} ${lightGray}`}>5</button>
+          <button type="button" onClick={calculate()} className={`col-3 ${button} ${lightGray}`}>6</button>
+          <button type="button" onClick={calculate()} className={`col-3 ${button} ${orange}`}>-</button>
+        </div>
+        <div className="row">
+          <button type="button" onClick={calculate()} className={`col-3 ${button} ${lightGray}`}>1</button>
+          <button type="button" onClick={calculate()} className={`col-3 ${button} ${lightGray}`}>2</button>
+          <button type="button" onClick={calculate()} className={`col-3 ${button} ${lightGray}`}>3</button>
+          <button type="button" onClick={calculate()} className={`col-3 ${button} ${orange}`}>+</button>
+        </div>
+        <div className="row">
+          <button type="button" onClick={calculate(obj, '0')} className={`col-6 ${button} ${lightGray}`}>0</button>
+          <button type="button" onClick={calculate(obj, '.')} className={`col-3 ${button} ${lightGray}`}>.</button>
+          <button type="button" onClick={calculate(obj, '=')} className={`col-3 ${button} ${orange}`}>=</button>
         </div>
       </div>
     );
