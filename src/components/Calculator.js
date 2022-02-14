@@ -25,7 +25,10 @@ function Calculator() {
   return (
     <>
       <Header />
-      <div className="container">
+      <section id="calculator-section" className="container-fluid px-sm-5 p-3 screen-height">
+        <p>a</p>
+      </section>
+      <div id="calculator" className="container">
         <div className="row">
           <div className={`result col-12 p-3 text-white text-end border-mid-gray ${darkGray}`}>
             { state.next || state.operation || state.total || 0 }
