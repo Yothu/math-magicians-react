@@ -23,11 +23,11 @@ function Calculator() {
   }
 
   return (
-    <>
+    <div className="whole-page">
       <Header />
-      <section id="calculator-section" className="container-fluid px-sm-5 p-3 screen-height">
+      <section id="calculator-section" className="whole-section bg-light-blue container-fluid px-sm-5 p-3">
         <div className="row">
-          <p className="p-3 col-12 col-md-5">Lets do some Math!</p>
+          <p className="calculator-text p-3 col-12 col-md-5 text-white">Lets do some Math!</p>
           <div id="calculator" className="container p-3">
             <div className="row">
               <div className={`result col-12 p-3 text-white text-end border-mid-gray ${darkGray}`}>
@@ -66,7 +66,7 @@ function Calculator() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 

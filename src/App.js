@@ -3,6 +3,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Calculator from './components/Calculator';
 import Home from './components/Home';
+import Quote from './components/Quote';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class App extends React.Component {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/calculator" element={<Calculator />} />
-        {/* <Route path="/quote" element={<Quote />} /> */}
+        <Route path="/quote" element={<Quote />} />
       </Routes>
     );
   }
