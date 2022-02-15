@@ -1,0 +1,47 @@
+:root {
+  --color1: #7395ae;
+  --color2: #557a95;
+  --color3: #5d5c61;
+}
+
+.bg-sea-blue {
+  background-color: var(--color2) !important;
+}
+
+.bg-light-blue {
+  background-color: var(--color1) !important;
+}
+
+.whole-page {
+  min-height: 100vh;
+}
+
+.route-text {
+  font-size: 1.5rem;
+  background-color: var(--color1);
+  border-radius: 8px;
+  margin: 3px 0.5rem;
+}
+
+.route-text:hover {
+  border: 2px solid white;
+  margin: 1px 0.5rem;
+}
+
+.whole-section {
+  min-height: calc(100vh - 85px);
+}
+
+.home-text-container {
+  border-radius: 8px;
+  font-size: 1.2rem;
+}
+
+.calculator-text {
+  font-size: 2rem;
+}
+
+.quote {
+  font-size: 1.8rem;
+  border-radius: 10px;
+}
