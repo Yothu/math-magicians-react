@@ -11,10 +11,11 @@
 - React, Bootstrap
 - Webpack
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
-
+Go check the live demo of this project:
++ [Heroku](https://math-magicians-react-heroku.herokuapp.com/)
++ [Netlify](https://math-magicians-react-dhaivy.netlify.app/)
 
 ## Getting Started
 
